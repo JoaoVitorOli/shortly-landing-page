@@ -35,3 +35,9 @@
     align-items: center;
   }
 }
+
+@media (max-width: 622px) {
+  .container p {
+    width: 100%;
+  }
+}
