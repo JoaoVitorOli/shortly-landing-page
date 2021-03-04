@@ -136,3 +136,14 @@
     width: 100%;
   }
 }
+
+@media (max-width: 360px) {
+  .iconCard {
+    width: 80px;
+    height: 80px;
+  }
+
+  .iconCard img {
+    width: 30px;
+  }
+}
