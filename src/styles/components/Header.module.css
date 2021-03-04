@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 100px;
+
+  justify-content: space-between;
+}
+
+.logoLists {
+  display: flex;
+}
+
+.logoLists ul {
+  display: flex;
+  align-items: center;
+}
+
+.logoLists li {
+  list-style: none;
+  margin-left: 25px;
+}
+
+.logoLists a {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.LoginSignup {
+  display: flex;
+  justify-content: space-between;
+  width: 170px;
+  align-items: center;
+}
+
+.LoginSignup a {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.LoginSignup button {
+  background: var(--buttonBgColor);
+
+  width: 100px;
+  height: 35px;
+
+  border: 0;
+  border-radius: 50px;
+
+  color: white;
+  font-weight: 700;
+}
+
+.buttonHamburguer {
+  display: none;
+  background: transparent;
+  border: 0;
+  z-index: 6;
+  border: 0;
+  font-size: 0;
+}
+
+.buttonHamburguer img {
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 800px) {
+  .logoLists a {
+    font-size: 14px;
+  }
+
+  .LoginSignup a {
+    font-size: 14px;
+  }
+
+  .LoginSignup button {
+    width: 90px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 740px) {
+  .logoLists ul {
+    display: none;
+  }
+
+  .LoginSignup {
+    display: none;
+  }
+
+  .buttonHamburguer {
+    display: flex;
+  }
+}

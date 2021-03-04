@@ -1,0 +1,55 @@
+.containerModalMobile {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+@media (min-width: 740px) {
+  .containerModalMobile {
+    display: none;
+  }
+}
+
+.modalMobileMenu {
+  margin: 50px 32px 0 32px;
+  max-width: 500px;
+  width: 100%;
+
+  background: var(--Dark-Violet);
+  padding: 2rem 0;
+
+  text-align: center;
+  align-items: center;
+
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.modalMobileMenu ul {
+  border-bottom: 1px groove var(--text);
+  margin: 0 30px;
+}
+
+.modalMobileMenu div {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 30px;
+}
+
+.modalMobileMenu div button {
+  border-radius: 50px;
+  border: 0;
+  height: 50px;
+
+  background: var(--buttonBgColor);
+
+  font-weight: 700;
+  color: white;
+}
