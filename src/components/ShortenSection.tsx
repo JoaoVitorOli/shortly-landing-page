@@ -24,7 +24,6 @@ export default function ShortenSection() {
 
   useEffect(() => {
     const storagedLinks = localStorage.getItem('@shrtco:links');
-    console.log(storagedLinks);
 
     if (storagedLinks) {
       setLinks(JSON.parse(storagedLinks));
@@ -48,10 +47,24 @@ export default function ShortenSection() {
 
     try {
       setLoading(true);
-      const response = await api.get<LinkTips>(newLink);
+
+      let validNewLink = newLink;
+      let verifyLink = validNewLink.substring(0, 8);
+
+      if (verifyLink === "https://") {
+        validNewLink = validNewLink.substr(8);
+      }
+
+      verifyLink = verifyLink.substr(0, 7);
+
+      if (verifyLink === "http://") {
+        validNewLink = validNewLink.substr(7);
+      }
+
+      const response = await api.get<LinkTips>(validNewLink);
 
       const linkData = response.data;
-  
+
       setLinks([...links, linkData]);
       setLoading(false);
       setExisterror(false);
@@ -103,11 +116,11 @@ export default function ShortenSection() {
 
       {links.map(link => (
         <div key={link.result.code} className={styles.linkShortedDiv}>
-          <p key={link.result.code}>{link.result.original_link}</p>
+          <p>{link.result.original_link}</p>
 
-          <div key={link.result.code}>
+          <div>
             <a href={link.result.full_short_link3} target="_blank">{link.result.full_short_link3}</a>
-            <button key={link.result.code} onClick={(e) => copyToClipboard(e)} type="button">Copy</button>
+            <button onClick={(e) => copyToClipboard(e)} type="button">Copy</button>
           </div>
         </div>
       ))}
